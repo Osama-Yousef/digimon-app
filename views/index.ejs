@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam</title>
+</head>
+<body>
+<h1>hello</h1>
+<% alldata.forEach(val=>{%>
+    <div>
+<h2><%=val.name%></h2>
+<h3><%=val.level%></h3>
+<img src="<%=val.img%>" alt="picture">
+<div>
+<button class="show"> select this </button>
+<form class="form"   action="./add"  method="GET">
+<input type="text" name="name" value="<%=val.name%>">
+
+<input type="text" name="level" value="<%=val.level%>">
+
+<input type="text" name="img" value="<%=val.img%>">
+<input type="text" value="add to favourite">
+
+</form>
+
+
+</div>
+
+
+
+
+ </div>
+ <%})%>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/public/js/app.js"></script>
+
+    
+</body>
+</html>
