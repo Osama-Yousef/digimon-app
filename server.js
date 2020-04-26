@@ -29,7 +29,7 @@ app.use(cors());
 
 app.get('/' , homepagehandler);
 app.get('/add',addhandler);
-
+app.get('/myfavourite' , myfavouritehandler)
 
 
 
@@ -81,9 +81,16 @@ res.redirect('/myfavourite')
     } )
 }
 
+// myfavouritehandler 
 
+function myfavouritehandler(req,res){
+    let sql = `SELECT * FROM mytable;`;
+    client.query(sql)
+    .then(result => {
+res.render('./pages/myfavourite' , {myCollection : result.rows})
 
-
+    })
+}
 
 
 
